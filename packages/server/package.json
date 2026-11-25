@@ -1,0 +1,14 @@
+{
+  "name": "@xcpc/server",
+  "version": "0.1.0",
+  "description": "HTTP API + web UI host for XCPC Workstation",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "src/app.js",
+  "bin": { "xcpc-server": "bin/xcpc-server.mjs" },
+  "dependencies": {
+    "@hono/node-server": "^2.1.11",
+    "@xcpc/core": "0.1.0",
+    "hono": "^4.13.0"
+  }
+}

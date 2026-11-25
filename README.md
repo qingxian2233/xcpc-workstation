@@ -8,6 +8,8 @@
   本地优先的 XCPC 工作站 —— 以开放目录题库为底座，覆盖个人题库与多人 Git 协同出题、活引用组卷与 PDF 出版，并持续演进至本地 Polygon 与训练复盘。
 </p>
 
+> **本 fork 新增 Node.js 多端版本**：Rust 核心经 napi-rs 驱动，一个 Node 服务同时供给桌面（Electron）、浏览器与手机，界面全新重写。见 [docs/node.md](./docs/node.md)。
+
 <p align="center">
   <strong>简体中文</strong> · <a href="./README_EN.md">English</a>
 </p>

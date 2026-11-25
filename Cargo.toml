@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["crates/*", "apps/desktop"]
+members = ["crates/*", "apps/desktop", "apps/tauri"]
 
 [workspace.package]
 edition = "2024"
@@ -12,6 +12,7 @@ publish = false
 xcpc-domain = { path = "crates/xcpc-domain" }
 xcpc-storage = { path = "crates/xcpc-storage" }
 xcpc-lint = { path = "crates/xcpc-lint" }
+xcpc-setter = { path = "crates/xcpc-setter" }
 xcpc-convert = { path = "crates/xcpc-convert" }
 xcpc-engine = { path = "crates/xcpc-engine" }
 
@@ -47,3 +48,19 @@ imagesize = "0.15"
 png = "0.18"
 image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp"] }
 resvg = { version = "0.47", default-features = false }
+
+# Native Node addon: a panic must surface as a JS exception, not abort the host process,
+# and typst's rasterizer wants speed over size.
+[profile.node]
+inherits = "release"
+opt-level = 3
+lto = "thin"
+codegen-units = 16
+panic = "unwind"
+
+# Native desktop: keep Typst rendering fast without the NSH size-only profile.
+[profile.desktop]
+inherits = "release"
+opt-level = 3
+lto = "thin"
+codegen-units = 16

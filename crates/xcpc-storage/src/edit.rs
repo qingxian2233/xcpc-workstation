@@ -28,6 +28,8 @@ const ALLOWED_PROBLEM_ROOT_FILES: &[&str] = &[
     "statement.zh.md",
     "statement.en.md",
     "editorial.md",
+    // Setter-only notes (intent, approaches to break, verification log); never typeset.
+    "notes.md",
     "checker.cpp",
     "validator.cpp",
     "interactor.cpp",

@@ -1,0 +1,28 @@
+{
+  "name": "xcpc-workstation-node",
+  "private": true,
+  "description": "XCPC Workstation on Node.js: Rust core via napi-rs, served to desktop, browser and mobile",
+  "license": "Apache-2.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/web",
+    "apps/electron"
+  ],
+  "scripts": {
+    "build:core": "node packages/core/scripts/build.mjs",
+    "build:web": "npm -w @xcpc/web run build",
+    "build": "npm run build:core && npm run build:web",
+    "dev": "node scripts/dev.mjs",
+    "start": "node packages/server/bin/xcpc-server.mjs",
+    "test": "node --test packages/*/test/*.test.mjs",
+    "build:tauri": "cd apps/tauri && tauri build -- --profile desktop",
+    "dev:tauri": "cd apps/tauri && tauri dev"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.6"
+  }
+}

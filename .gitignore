@@ -5,3 +5,9 @@ target/
 .nsh/
 __pycache__/
 tests/fixtures/**/workspace/build/
+.fonts/
+node_modules/
+*.node
+apps/web/dist/
+apps/electron/out/
+scripts/__pycache__/

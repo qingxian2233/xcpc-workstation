@@ -1,0 +1,10 @@
+{
+  "name": "@xcpc/core",
+  "version": "0.1.0",
+  "description": "XCPC Workstation core (Rust, napi-rs): workspace, library, Typst publishing",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": ["index.js", "index.d.ts", "*.node"]
+}

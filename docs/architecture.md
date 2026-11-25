@@ -268,3 +268,7 @@ Phase 1 的三个工具参数相同：`target`（`problem` / `contest`）、`id`
 
 - 人类可读的中文错误文案集中维护在 Core 层，供桌面 GUI 与 CLI 文本输出共用，统一按三段式组织（人话说明现象 → 可点击/可定位的位置 → 仅在有明确下一步时给出操作建议；规则拒绝如冻结只读不当错误处理，详规范见 [design-system.md §7](./design-system.md#7-文案克制规范)）。
 - 默认人类可读主文案不暴露底层错误码与英文技术原文（GUI 收入「复制详情」）；CLI `--json` 与 MCP 响应继续保留完整的结构化错误码与细节字段。
+
+## Tauri macOS 桌面宿主
+
+用户要求的 macOS 分发使用 `apps/tauri`：保留 `apps/web` 的 React 页面，由 Tauri 2 / 系统 WebKit 承载；原 Node 接口由同进程 Rust 兼容层实现，经 `crates/xcpc-runtime` 直连 Core。编译产物运行不依赖 Node 或 Electron。原 NSH、CLI、MCP 及 Web/Electron 源码保留，详见 [tauri.md](tauri.md)。

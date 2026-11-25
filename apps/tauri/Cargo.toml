@@ -1,0 +1,18 @@
+[package]
+name = "xcpc-tauri"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+[dependencies]
+tauri = { version = "2", features = ["custom-protocol"] }
+xcpc-server = { path = "../../crates/xcpc-server" }
+serde.workspace = true
+serde_json.workspace = true
+tokio = { version = "1", features = ["rt-multi-thread", "net", "sync", "time"] }
+uuid = { version = "1", features = ["v4"] }
+rfd = "0.15"
+open = "5"
+
